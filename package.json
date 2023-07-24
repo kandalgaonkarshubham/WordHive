@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "scripts": {
+    "initiate": "concurrently \"npm i\" \"cd ./client && npm i\" \"cd ./server && npm i\"",
+    "start": "concurrently \"cd ./server && npm run server\" \"cd ./client && npm run dev\"",
+    "host": "npm i concurrently && concurrently \"npm i\" \"cd ./client && npm i\" \"cd ./server && npm i\" \"cd ./server && npm run server\" \"cd ./client && npm run dev\""
+  }
+}
