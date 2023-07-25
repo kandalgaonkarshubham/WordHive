@@ -344,7 +344,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-header .display-tc .profile-thumb,
 .fh5co-cover .display-tc .profile-thumb {
-  background-size: cover !important;
+  background-size: contain !important;
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
@@ -352,11 +352,7 @@ h1, h2, h3, h4, h5, h6, figure {
   width: 200px;
   margin: 0 auto;
   margin-bottom: 30px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
-  background-image: url(../images/cover_bg_3.jpg)
+  background-image: url(../images/png/logoicon.png);
 }
 #fh5co-header .display-tc .fh5co-social-icons li a,
 .fh5co-cover .display-tc .fh5co-social-icons li a {
@@ -799,6 +795,9 @@ h1, h2, h3, h4, h5, h6, figure {
 
 
 .js .animate-box {
+  opacity: 0;
+}
+.animate-box {
   opacity: 0;
 }
 

@@ -5,23 +5,23 @@
 	--secondary-color: #8167a9;
 	--secondary-dark: hsl(264, 28%, 40%);
 	--tertiary-color: #828282;
-	--testimonial-count: 5;
 	--v1: calc(max(9vw, 11vh));
 }
 
-body {
-	background-color: var(--primary-color);
-	background: -ms-radial-gradient(ellipse at center,  #3e2f55 0%, #1f2029 100%) fixed no-repeat;
-	background: -moz-radial-gradient(ellipse at center,  #3e2f55 0%, #1f2029 100%) fixed no-repeat;
-	background: -o-radial-gradient(ellipse at center, #3e2f55 0%, #1f2029 100%) fixed no-repeat;
-	background: -webkit-gradient(radial, center center, 0, center center, 497, color-stop(0, #3e2f55), color-stop(1, #1f2029));
-	background: -webkit-radial-gradient(ellipse at center,  #3e2f55 0%, #1f2029 100%) fixed no-repeat;
-	background: radial-gradient(ellipse at center, #3e2f55 0%, #1f2029 100%) fixed no-repeat;
+/* body {
+	background: -ms-radial-gradient(ellipse at center,  #3e2f55 0%, #1f2029 100%) fixed no-repeat !important;
+	background: -moz-radial-gradient(ellipse at center,  #3e2f55 0%, #1f2029 100%) fixed no-repeat !important;
+	background: -o-radial-gradient(ellipse at center, #3e2f55 0%, #1f2029 100%) fixed no-repeat !important;
+	background: -webkit-gradient(radial, center center, 0, center center, 497, color-stop(0, #3e2f55), color-stop(1, #1f2029)) !important;
+	background: -webkit-radial-gradient(ellipse at center,  #3e2f55 0%, #1f2029 100%) fixed no-repeat !important;
+	background: radial-gradient(ellipse at center, #3e2f55 0%, #1f2029 100%) fixed no-repeat !important;
 	font-family: 'Source Sans Pro', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	margin: 0px;
+} */
+body {
+	background: var(--primary-color);
 }
-
 ::selection {
 	background-color: rgba(0,0,0,0.2);
 }
@@ -31,7 +31,7 @@ body {
 }
 	
 
-a {
+.navigation {
 	color: white;
 	text-decoration: none;
 	border-bottom: 1px solid rgba(255,255,255,0.5);
@@ -42,9 +42,9 @@ a {
 	margin-right: 10px;
 }
 
-a:last-child { margin-right: 0px; }
+.navigation:last-child { margin-right: 0px; }
 
-a:hover {
+.navigation:hover {
 	text-shadow: 0px 0px 1px rgba(255,255,255,.5);
 	border-bottom: 1px solid rgba(255,255,255,1);
 }
@@ -179,13 +179,14 @@ a:hover {
 	width: 88%;
 	height: 41px;
 	padding-left: 15px;
-	padding-rigt: 15px;
+	padding-right: 15px;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	background-color: rgba(0,0,0,0.2);
 	border: none;
 	outline: none;
 	-webkit-appearance: none;
+	appearance: none;
 	font-size: 16px;
 	font-weight: 300;
 	color: white;
@@ -205,6 +206,7 @@ a:hover {
 	outline: none;
 	border: none;
 	-webkit-appearance: none;
+	appearance: none;
 	font-family: 'Source Sans Pro', sans-serif;
 	color: white;
 	font-weight: 300;

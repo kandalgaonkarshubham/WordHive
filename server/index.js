@@ -33,14 +33,14 @@ app.get("/activateAPI", (req, res) => {
     res.status(400).json({ success: false, message: "API key is already active" });
   }else{
 
-    if (tValue === "1") {
+    if (tValue != 0) {
 
       apiKey = process.env.API_KEY; // Accesing ApiKey from Netlify
       console.log(process.env.API_KEY)
       activateApiKeyMiddleware(1);
 
       // Send a success response
-      res.json({ success: true, message: "API key activated successfully for n minutes" });
+      res.json({ success: true, message: `API key activated successfully for ${tValue} minutes` });
     } else {
       // Send an error response for invalid tValue
       res.status(400).json({ success: false, message: "Invalid Value provided" });

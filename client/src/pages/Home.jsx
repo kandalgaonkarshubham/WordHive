@@ -1,22 +1,10 @@
 import React, { useEffect } from "react";
 import Loader from "../../components/Loader";
+import '../css/index.css';
 
 function Home() {
 
   useEffect(() => {
-
-    // For CSS and SCRIPT tag
-
-    const cssLinkElement = document.createElement("link");
-    cssLinkElement.rel = "stylesheet";
-    cssLinkElement.href = "/src/css/index.css";
-
-    const scriptElement = document.createElement("script");
-    scriptElement.src = "/src/js/index.js";
-
-    document.head.appendChild(cssLinkElement);
-    document.body.appendChild(scriptElement);
-
     // For SVG FILTER
 
     const NS = "http://www.w3.org/2000/svg";
@@ -37,8 +25,8 @@ function Home() {
     colormatrix.setAttribute("in", "blur");
     colormatrix.setAttribute("mode", "matrix");
     colormatrix.setAttribute(
-        "values",
-        "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+      "values",
+      "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
     );
     colormatrix.setAttribute("result", "blob");
 
@@ -50,13 +38,116 @@ function Home() {
 
     document.body.appendChild(svg);
 
-    return () => {
-      document.head.removeChild(cssLinkElement);
-      document.body.removeChild(scriptElement);
-      document.body.removeChild(svg);
-    };
-  }, []);
+    (function ($) {
+    //   "use strict";
 
+      //Page cursors
+
+      document
+        .getElementsByTagName("body")[0]
+        .addEventListener("mousemove", function (n) {
+          (t.style.left = n.clientX + "px"),
+            (t.style.top = n.clientY + "px"),
+            (e.style.left = n.clientX + "px"),
+            (e.style.top = n.clientY + "px"),
+            (i.style.left = n.clientX + "px"),
+            (i.style.top = n.clientY + "px");
+        });
+      var t = document.getElementById("cursor"),
+        e = document.getElementById("cursor2"),
+        i = document.getElementById("cursor3");
+      function n(t) {
+        e.classList.add("hover"), i.classList.add("hover");
+      }
+      function s(t) {
+        e.classList.remove("hover"), i.classList.remove("hover");
+      }
+      s();
+      for (
+        var r = document.querySelectorAll(".hover-target"), a = r.length - 1;
+        a >= 0;
+        a--
+      ) {
+        o(r[a]);
+      }
+      function o(t) {
+        t.addEventListener("mouseover", n), t.addEventListener("mouseout", s);
+      }
+
+      //Navigation
+
+      var app = (function () {
+        var body = undefined;
+        var menu = undefined;
+        var menuItems = undefined;
+        var init = function init() {
+          body = document.querySelector("body");
+          menu = document.querySelector(".menu-icon");
+          menuItems = document.querySelectorAll(".nav__list-item");
+          applyListeners();
+        };
+        var applyListeners = function applyListeners() {
+          menu.addEventListener("click", function () {
+            return toggleClass(body, "nav-active");
+          });
+        };
+        var toggleClass = function toggleClass(element, stringClass) {
+          if (element.classList.contains(stringClass))
+            element.classList.remove(stringClass);
+          else element.classList.add(stringClass);
+        };
+        init();
+      })();
+
+      // Page Loader
+      $(".fh5co-loader").fadeOut(1500);
+    })(jQuery);
+
+    let contentWayPoint;
+
+    contentWayPoint = () => {
+        var i = 0;
+        $(".animate-box").waypoint(
+        function (direction) {
+            if (
+            direction === "down" &&
+            !$(this.element).hasClass("animated-fast")
+            ) {
+            i++;
+
+            $(this.element).addClass("item-animate");
+            setTimeout(function () {
+                $("body .animate-box.item-animate").each(function (k) {
+                var el = $(this);
+                setTimeout(
+                    function () {
+                    var effect = el.data("animate-effect");
+                    if (effect === "fadeIn") {
+                        el.addClass("fadeIn animated-fast");
+                    } else if (effect === "fadeInLeft") {
+                        el.addClass("fadeInLeft animated-fast");
+                    } else if (effect === "fadeInRight") {
+                        el.addClass("fadeInRight animated-fast");
+                    } else {
+                        el.addClass("fadeInUp animated-fast");
+                    }
+
+                    el.removeClass("item-animate");
+                    },
+                    k * 100,
+                    "easeInOutExpo"
+                );
+                });
+            }, 50);
+            }
+        },
+        { offset: "85%" }
+        );
+    };
+
+    contentWayPoint();
+    
+  }, []);
 
   return (
     <>
@@ -65,7 +156,8 @@ function Home() {
         <div className="header-wrapper">
           <div className="logo-wrap">
             <a href="#" className="hover-target">
-              <span>your</span>logo
+                <img className="icon" src="../images/png/logoicon.png" alt="Logo created with the help of app.logo.com" />
+                <img className="text" src="../images/png/logotext.png" alt="Logo created with the help of app.logo.com" />
             </a>
           </div>
           <div className="nav-but-wrap">
@@ -100,7 +192,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="section full-height over-hide">
+      <div className="section full-height over-hide my-auto">
         <div className="switch-wrap">
           <h1 className="animate-box">
             Word<span>Hive</span>
@@ -135,8 +227,8 @@ function Home() {
       <div className="cursor2" id="cursor2"></div>
       <div className="cursor3" id="cursor3"></div>
 
-      <footer>
-        <div className="liquid animate-box">
+      <footer className="liquidFooter">
+        <div className="liquid">
           <div className="bubbles">
             <div className="bubble" style={{'--size':'2.5129399643529515rem', '--distance':'9.569389395239572rem', '--position':'90.34137378453543%', '--time':'3.158603591725461s', '--delay':'-3.951399490618868s',}}>
 			</div>
@@ -556,7 +648,7 @@ function Home() {
               </p>
             </div>
 
-            <div className="github">
+            <div className="github my-auto">
               <a className="image  hover-target" href="https://github.com/kandalgaonkarshubham" target="_blank">
                 <i className="fa-brands fa-github"></i>
               </a>

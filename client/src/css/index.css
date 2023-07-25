@@ -5,7 +5,6 @@
  	--secondary-color: #8167a9;
  	--secondary-dark: hsl(264, 28%, 40%);
  	--tertiary-color: #828282;
- 	--testimonial-count: 5;
  	--v1: calc(max(9vw, 11vh));
  }
  
@@ -30,6 +29,10 @@ a {
 }
 a:hover {
 	text-decoration: none;
+}
+
+.lead{
+	font-size: 1em !important;
 }
 
 /* #Cursor
@@ -76,11 +79,11 @@ a:hover {
 	box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
 }
 
-@media screen and (max-width: 1200px){
+/* @media screen and (max-width: 1200px){
 	.cursor,.cursor2,.cursor3{
 		display: none
 	}
-}
+} */
 
 /* #Primary style
 ================================================== */
@@ -118,6 +121,8 @@ a:hover {
 	left:0;
 	top: 40px;
 	cursor: pointer;
+
+	transform: translate(-30px,-8px);
 }
 .logo-wrap a {
 	cursor: pointer;
@@ -129,6 +134,13 @@ a:hover {
 	letter-spacing: 2px;
 	color: #fff;
 	transition : all 0.3s ease-out;
+}
+.logo-wrap a .icon{
+	height: 40px;
+	margin-right: 0.5em !important;
+}
+.logo-wrap a .text{
+	height: 40px;
 }
 .logo-wrap a span{ 
 	color: #8167a9;
@@ -390,12 +402,22 @@ body.nav-active .nav__list-item:nth-child(10) {
           transition-delay: 1.7s;
 }
 
+@media only screen and (max-width: 440px) {
+	.switch-wrap {
+		transform: translateY(-50%);
+		margin-bottom: 5% !important;
+	}
+}
+@media only screen and (min-width: 440px) {
+	.switch-wrap {
+		transform: translateY(-50%);
+	}
+}
 .switch-wrap {
 	position: absolute;
 	top: 50%;
 	left: 0;
 	z-index: 10;
-    transform: translateY(-50%);
 	width: 100%;
 	-webkit-transition: all 500ms linear;
 	transition: all 500ms linear; 
@@ -624,13 +646,13 @@ body.light .switch-wrap p span:nth-child(1):before {
 
 /* #Footer
 ================================================== */
-footer {
+.liquidFooter {
 	display: grid;
 	grid-template-rows: 1fr 10rem auto;
 	overflow-x: hidden;
 }
 
-footer .liquid {
+.liquidFooter .liquid {
 	z-index: 1;
 	--footer-background: #8167a9;
 	display: grid;
@@ -639,7 +661,7 @@ footer .liquid {
 	min-height: 12rem;
 }
 
-footer .liquid .bubbles {
+.liquidFooter .liquid .bubbles {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -649,7 +671,7 @@ footer .liquid .bubbles {
 	filter: url("#blob"); /* exact thing which is not working*/
 }
 
-footer .liquid .bubbles .bubble {
+.liquidFooter .liquid .bubbles .bubble {
 	position: absolute;
 	left: var(--position, 50%);
 	background: var(--footer-background);
@@ -659,7 +681,7 @@ footer .liquid .bubbles .bubble {
 	transform: translate(-50%, 100%);
 }
 
-footer .liquid .content {
+.liquidFooter .liquid .content {
 	z-index: 2;
 	display: grid;
 	grid-template-columns: 1fr auto;
@@ -668,44 +690,62 @@ footer .liquid .content {
 	background: var(--footer-background);
 }
 
-footer .liquid .content a,
-footer .liquid .content p {
+.liquidFooter .liquid .content a,
+.liquidFooter .liquid .content p {
 	color: #F5F7FA;
 	text-decoration: none;
 	font-weight: 500;
 }
-footer .liquid .content p a{
+.liquidFooter .liquid .content p a{
 	font-weight: bolder;
 }
 
-footer .liquid .content b {
+.liquidFooter .liquid .content b {
 	color: white;
 }
 
-footer .liquid .content p {
+.liquidFooter .liquid .content p {
 	margin: 0;
 	font-size: 0.75rem;
 }
 
-footer .liquid .content>div {
+.liquidFooter .liquid .content>div {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
-footer .liquid .content>.github {
+.liquidFooter .liquid .content>.github {
 	justify-content: start;
 }
+/* For viewport width less than or equal to 600px */
+@media (max-width: 600px) {
+	.liquidFooter .liquid .content {
+		grid-template-columns: 1fr;
+		/* Change to a single column layout */
+	}
 
+	.liquidFooter .liquid .content>div.github {
+		justify-content: center;
+		/* Center the .github div in the single column */
+	}
+}
+@media (max-width: 600px) {
 
-footer .liquid .content>div>div {
+	.liquidFooter .liquid .content>div.github p {
+		text-align: center;
+		/* Center the .github div in the single column */
+	}
+}
+
+.liquidFooter .liquid .content>div>div {
 	margin: 0.25rem 0;
 }
 
-footer .liquid .content>div>div>* {
+.liquidFooter .liquid .content>div>div>* {
 	margin-right: 0.5rem;
 }
 
-footer .liquid .content>div .image {
+.liquidFooter .liquid .content>div .image {
 	align-self: center;
 	width: 4rem;
 	height: 4rem;
@@ -714,7 +754,7 @@ footer .liquid .content>div .image {
 	background-position: center;
 }
 
-footer .liquid .content>div .image i{
+.liquidFooter .liquid .content>div .image i{
 	font-size: 50px;
 }
 
