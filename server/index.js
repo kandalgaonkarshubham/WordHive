@@ -1,12 +1,12 @@
 // This file is customsed for Production on Netlify
 
 const express = require("express");
-const router = express.Router();
-// PORT = 5000;
-const app = express();
+PORT = 5000;
+app = express();
 var axios = require("axios").default;
 const voice = require("elevenlabs-node");
 var cors = require('cors');
+const router = Router();
 app.use(cors());
 
 
@@ -27,7 +27,7 @@ const activateApiKeyMiddleware = (time) => {
 };
 
 // Route to receive Activate Api call and activate the API key
-router.get("/activateAPI", (req, res) => {
+app.get("/activateAPI", (req, res) => {
   const tValue = req.query.t;
   console.log("t value:", tValue);
 
@@ -52,7 +52,7 @@ router.get("/activateAPI", (req, res) => {
 });
 
 
-router.get("/search", async (req, res) => {
+app.get("/search", async (req, res) => {
   const { searchWord } = req.query;
 
   const urls = [
@@ -305,7 +305,7 @@ router.get("/search", async (req, res) => {
 });
 
 
-router.get("/tts", (req, res) => {
+app.get("/tts", (req, res) => {
   const apiKey = "adb2c401473b23917a83efeb80f42503";
   const voiceID = "AZnzlk1XvdvUeBnXmlld";
   // const fileName = "audio.mp3";
@@ -333,10 +333,4 @@ router.get("/tts", (req, res) => {
     });
 });
 
-
-// Use the router to handle requests to the `/.netlify/functions/api` path
-app.use(`/.netlify/functions/api`, router);
-
-// Export the app and the serverless function
-module.exports = app;
-module.exports.handler = serverless(app);
+app.listen(PORT, () => console.log(`Express server listening on port : ${PORT}`));
