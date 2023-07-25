@@ -36,7 +36,6 @@ app.get("/activateAPI", (req, res) => {
     if (tValue != 0) {
 
       apiKey = process.env.API_KEY; // Accesing ApiKey from Netlify
-      console.log(process.env.API_KEY)
       activateApiKeyMiddleware(1);
 
       // Send a success response
