@@ -1,0 +1,240 @@
+:root {
+    --primary-color: rgb(31, 32, 41);
+    --secondary-color: #8066a9;
+    --secondary-dark: #604983;
+    --tertiary-color: hsl(0, 0%, 51%);
+    --testimonial-count: 5;
+    --v1: calc(max(9vw, 11vh));
+}
+html {
+    scroll-behavior: smooth;
+}
+#root{
+    height: 100vh;
+    width: 100vw;
+}
+body{
+    background-color: var(--primary-color);
+}
+
+.manual_mdtp__span{
+    font-size: 0.8em !important;
+}
+
+.mdtp__wrapper[data-theme='purple'] .mdtp__clock_holder {
+    background-color: #1d1d1d !important;
+}
+.mdtp__wrapper[data-theme='purple'] .mdtp__clock_holder .mdtp__clock {
+    background-color: #181818 !important;
+}
+.mdtp__digit{
+    color: #fff !important;
+}
+.mdtimepicker .mdtp__wrapper {
+    bottom: 30% !important;
+}
+
+div[data-testid="three-dots-loading"]{
+    justify-content: center;
+}
+
+.logo{
+    width: 200px;
+    height: 150px;
+    transform: translateY(-100px);
+}
+h3 {
+    color: #999;
+    padding-bottom: 20px;
+}
+.devcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.wave-group {
+    position: relative;
+}
+
+.wave-group .input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+}
+
+.wave-group .input:focus {
+    outline: none;
+}
+
+.wave-group .label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    display: flex;
+}
+
+.wave-group .label-char {
+    transition: 0.2s ease all;
+    transition-delay: calc(var(--index) * .05s);
+}
+
+.wave-group .input:focus~label .label-char,
+.wave-group .input:valid~label .label-char {
+    transform: translateY(-20px);
+    font-size: 14px;
+    color: var(--secondary-dark);
+    font-weight: 500;
+}
+
+.wave-group .bar {
+    position: relative;
+    display: block;
+    width: 200px;
+}
+
+.wave-group .bar:before,
+.wave-group .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: var(--secondary-dark);
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+.valid:before,
+.valid:after{
+    background: green !important;
+}
+.invalid:before,
+.invalid:after{
+    background: red !important;
+}
+.valid{
+    color: green !important;
+}
+.invalid{
+    color: red !important;
+}
+
+.wave-group .bar:before {
+    left: 50%;
+}
+
+.wave-group .bar:after {
+    right: 50%;
+}
+
+.wave-group .input:focus~.bar:before,
+.wave-group .input:focus~.bar:after {
+    width: 50%;
+}
+
+
+
+
+.input-container {
+    position: relative;
+    margin: 25px auto;
+    width: 200px;
+}
+
+.input-container input[type="text"] {
+    font-size: 20px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 5px 0;
+    background-color: transparent;
+    outline: none;
+}
+
+.input-container .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ccc;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.input-container input[type="text"]{
+    color: #ccc;
+}
+.input-container input[type="text"]:focus~.label,
+.input-container input[type="text"]:valid~.label {
+    top: -20px;
+    font-size: 16px;
+    color: var(--secondary-dark);
+}
+.input-container input::placeholder {
+    color: var(--secondary-dark);
+}
+
+.input-container .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--secondary-dark);
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+}
+
+.input-container input[type="text"]:focus~.underline,
+.input-container input[type="text"]:valid~.underline {
+    transform: scaleX(1);
+}
+
+
+.button {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: var(--secondary-dark);
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid var(--secondary-dark);
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 var(--secondary-dark);
+}
+
+.success {
+    color: white;
+    border: 2px solid green;
+    box-shadow: inset 0 -100px 0 0 green;
+}
+.error {
+    color: white;
+    border: 2px solid red;
+    box-shadow: inset 0 -100px 0 0 red;
+}
+
+.button:active {
+    transform: scale(0.9);
+}
+
+.api-callback{
+    text-align: center;
+    width: 100%;
+    margin-top: 5%;
+}

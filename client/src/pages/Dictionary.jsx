@@ -16,8 +16,8 @@ function Dictionary() {
   const frequencyRef = useRef(null);
   const header = useRef(null);
   const [isSuccess, setIsSuccess] = useState(false);
-  const urlWithProxy = "/search";
-  const urlWithProxyTTS = "/tts";
+  const urlWithProxy = "https:www.wordhive.dev/search";
+  const urlWithProxyTTS = "https:www.wordhive.dev/tts";
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -633,10 +633,10 @@ SOFTWARE. -->
           pushNotification(errorMessage, "error");
         } else if (err.response?.status === 999) {
           const errorMessage =
-            "Api Key is Not set, Redirecting you to wordhive.dev";
+            "Api Key is Not set, Redirecting you to Activation Portal";
           pushNotification(errorMessage, "warning");
           setTimeout(() => {
-            window.location.replace("https://wordhive.dev");
+            window.location.replace("https://wordhive.app/activate");
           }, 5000);
         } else {
           const errorMessage = "An unknown error occurred.";
@@ -749,7 +749,6 @@ SOFTWARE. -->
   // Funtions From search.js
 
   (function () {
-    "use strict";
 
     var isMobile = {
       Android: function () {

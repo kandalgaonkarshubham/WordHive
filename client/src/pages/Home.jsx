@@ -39,7 +39,6 @@ function Home() {
     document.body.appendChild(svg);
 
     (function ($) {
-    //   "use strict";
 
       //Page cursors
 
