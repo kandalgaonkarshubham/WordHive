@@ -4,6 +4,7 @@
   "description": "",
   "main": "functions/api.js",
   "scripts": {
+    "build": "npm i"
   },
   "keywords": [],
   "author": "",

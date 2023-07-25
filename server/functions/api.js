@@ -12,7 +12,6 @@ const router = express.Router();
 
 
 let apiKey = "";
-
 // Middleware to activate the API key
 const activateApiKeyMiddleware = (time) => {
   if (apiKey) {
@@ -25,6 +24,61 @@ const activateApiKeyMiddleware = (time) => {
     }, time * 60 * 1000); // time in milliseconds
   }
 };
+
+// Route for HTML content
+
+// Route to handle GET requests to the root URL
+app.get("/", (req, res) => {
+  const styles = `
+    <style>
+        *{
+            color: #604983;
+        }
+        body {
+            background-color: #1f2029;
+            height: 100vh;
+        }
+        .container{
+            height: 100%;
+        }
+        .container img{
+            height: 200px;
+            margin-bottom: 5%;
+        }
+        .container p{
+            color: #828282;
+            font-size: 2rem;
+        }
+    </style>
+  `;
+
+  const htmlContent = `
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>WordHive Api Portal</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+      ${styles}
+  </head>
+  <body>
+      
+      <div class="container d-flex justify-content-center align-items-center">
+          <div class="row">
+              <div class="col-12">
+                  <img src="https://wordhive.app/images/png/logofull.png" alt="">
+                  <p>WordHive Api Portal</p>
+              </div>
+          </div>
+      </div>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  </html>`;
+  res.send(htmlContent);
+});
 
 // Route to receive Activate Api call and activate the API key
 router.get("/activateAPI", (req, res) => {
