@@ -95,14 +95,14 @@ router.get("/activateAPI", (req, res) => {
       activateApiKeyMiddleware(1);
 
       // Send a success response
-      res.json({ success: true, message: `API key activated successfully for ${tValue} minutes` });
+      res.json({ success: true, message: `API key activated successfully for ${tValue} ${process.env.API_KEY} minutes` });
     } else {
       // Send an error response for invalid tValue
       res.status(400).json({ success: false, message: "Invalid Value provided" });
     }
 
-    res.send("Received Api Activation Request");
   }
+  // res.send("Received Api Activation Request");
 });
 
 
@@ -172,7 +172,7 @@ router.get("/search", async (req, res) => {
     console.error(error);
   
     if (error.response.data.message === 'Invalid API key. Go to https://docs.rapidapi.com/docs/keys for more info.') {
-      res.status(999).json({ error: error.response.data.message });
+      res.status(502).json({ error: error.response.data.message });
     }else{
       res.status(500).json({ error: error.response.data.message });
     }
@@ -391,3 +391,4 @@ router.get("/tts", (req, res) => {
 app.use('/', router);
 
 module.exports.handler = serverless(app);
+// module.exports = app;
