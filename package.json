@@ -5,6 +5,7 @@
   "scripts": {
     "initiate": "npm i && concurrently \"cd ./server && npm i\" \"cd ./client && npm i\"",
     "start": "concurrently \"cd ./server && npm run server\" \"cd ./client && npm run dev\"",
-    "build": "cd ./client && npm run build"
+    "build": "cd ./client && npm run build",
+    "host": "npm run initiate && cd ./client && npm run build"
   }
 }
