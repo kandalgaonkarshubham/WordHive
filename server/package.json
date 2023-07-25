@@ -4,10 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "initiate": "npm i",
-    "build": "netlify-lambda build src",
-    "start": "netlify-lambda serve src",
-    "host": "npm run initiate && npm run build && npm run start"
   },
   "keywords": [],
   "author": "",
