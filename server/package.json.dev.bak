@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "initiate": "npm i",
-    "build": "netlify-lambda build src",
-    "start": "netlify-lambda serve src",
-    "host": "npm run initiate && npm run build && npm run start"
+    "build": "npm i",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "server": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
