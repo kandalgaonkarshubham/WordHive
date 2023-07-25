@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build" : "netlify-lambda build express"
+    "build" : "netlify build express"
   },
   "keywords": [],
   "author": "",
