@@ -644,6 +644,7 @@ SOFTWARE. -->
           pushNotification(errorMessage, "error");
         } else {
           const errorMessage = "An unknown error occurred.";
+          console.log(err)
           pushNotification(errorMessage, "error");
         }
       });
