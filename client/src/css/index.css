@@ -402,12 +402,20 @@ body.nav-active .nav__list-item:nth-child(10) {
           transition-delay: 1.7s;
 }
 
+@media only screen and (max-width: 400px) {
+	.section {
+		margin-top: 15% !important;
+		margin-bottom: 15% !important;
+	}
+}
 @media only screen and (max-width: 440px) {
 	.switch-wrap {
 		transform: translateY(-50%);
-		margin-bottom: 5% !important;
+		margin-top: 15% !important;
+		margin-bottom: 15% !important;
 	}
 }
+
 @media only screen and (min-width: 440px) {
 	.switch-wrap {
 		transform: translateY(-50%);
