@@ -7,7 +7,10 @@ var axios = require("axios").default;
 const voice = require("elevenlabs-node");
 var cors = require('cors');
 const router = express.Router();
-// app.use(cors());
+
+// Enable CORS for all routes
+app.use(cors());
+
 
 
 

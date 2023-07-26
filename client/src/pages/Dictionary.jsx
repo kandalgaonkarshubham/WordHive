@@ -16,8 +16,8 @@ function Dictionary() {
   const frequencyRef = useRef(null);
   const header = useRef(null);
   const [isSuccess, setIsSuccess] = useState(false);
-  const urlWithProxy = "https:www.wordhive.dev/search";
-  const urlWithProxyTTS = "https:www.wordhive.dev/tts";
+  const urlWithProxy = "https://wordhive.dev/search";
+  const urlWithProxyTTS = "https://wordhive.dev/tts";
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -618,7 +618,7 @@ SOFTWARE. -->
         // console.log(res.data);
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err.response)
         setFetching(false);
         document
           .getElementById("searchbar")
@@ -639,6 +639,10 @@ SOFTWARE. -->
           setTimeout(() => {
             window.location.replace("https://wordhive.app/activate");
           }, 5000);
+        } else if (err.request) {
+          // Handle network errors (e.g., no internet connection)
+          const errorMessage = "Network error. Please check your internet connection.";
+          pushNotification(errorMessage, "error");
         } else {
           const errorMessage = "An unknown error occurred.";
           pushNotification(errorMessage, "error");
