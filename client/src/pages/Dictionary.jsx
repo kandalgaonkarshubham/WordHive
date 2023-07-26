@@ -16,9 +16,10 @@ function Dictionary() {
   const frequencyRef = useRef(null);
   const header = useRef(null);
   const [isSuccess, setIsSuccess] = useState(false);
+  // const urlWithProxy = "/search";
   const urlWithProxy = "https://wordhive.dev/search";
+  // const urlWithProxyTTS = "/tts";
   const urlWithProxyTTS = "https://wordhive.dev/tts";
-  
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -75,7 +76,7 @@ function Dictionary() {
 
     contentWayPoint();
 
-    // -------------------------------------Header Nodes---------------------------------------------------------------
+    // ----------Header Nodes--------------
 
     /* !
 <!--The MIT License(MIT)
@@ -313,8 +314,92 @@ SOFTWARE. -->
       redrawScene();
     })();
 
+    $(".progress .progress-bar").progressbar(); // bootstrap 3
+  }, []);
 
-}, []);
+  // --------- Definitions Slider ----------
+
+  function setupCarousel() {
+    // Get all the testimonial labels and dots labels
+    const testimonialsLabels = Array.from(
+      document.querySelectorAll('.testimonials label[for^="t-"]')
+    );
+    const dotsLabels = Array.from(
+      document.querySelectorAll('.dots label[for^="t-"]')
+    );
+
+    // Function to apply the initial styles
+    function applyInitialStyles() {
+      testimonialsLabels.forEach((label, index) => {
+        if (index === 0) {
+          label.style.transform = "translate3d(0, 0, 0)";
+          label.style.zIndex = "4";
+        } else {
+          label.style.transform = `translate3d(${
+            index * 300
+          }px, 0, -90px) rotateY(${-index * 15}deg)`;
+          label.style.zIndex = "1";
+        }
+      });
+
+      dotsLabels[0].classList.add("active");
+    }
+
+    // Function to handle the checked state
+    function handleCheckedState() {
+      const checkedValue = this.id;
+
+      testimonialsLabels.forEach((label, index) => {
+        const offset =
+          index -
+          testimonialsLabels.findIndex(
+            (item) => item.getAttribute("for") === checkedValue
+          );
+
+        if (offset === 0) {
+          label.style.transform = "translate3d(0, 0, 0)";
+          label.style.zIndex = "4";
+        } else {
+          const translateX =
+            offset > 0 ? `${offset * 300}px` : `${Math.abs(offset) * -300}px`;
+          const rotateY =
+            offset > 0 ? `${offset * -15}deg` : `${Math.abs(offset) * 15}deg`;
+          label.style.transform = `translate3d(${translateX}, 0, -90px) rotateY(${rotateY})`;
+          label.style.zIndex = offset === 1 ? "3" : "1";
+
+          // Set zIndex of the 3rd label to 0 when the first dot is checked
+          if (offset === -2 && checkedValue === "t-1") {
+            label.style.zIndex = "0";
+          }
+        }
+      });
+
+      dotsLabels.forEach((label) => {
+        if (label.getAttribute("for") === checkedValue) {
+          label.classList.add("active");
+        } else {
+          label.classList.remove("active");
+        }
+      });
+    }
+
+    // Attach event listener to each testimonial input
+    testimonialsLabels.forEach((label) => {
+      const inputId = label.getAttribute("for");
+      const input = document.getElementById(inputId);
+      input.addEventListener("change", handleCheckedState);
+    });
+
+    // Apply initial styles on page load
+    // applyInitialStyles();
+
+    // Attach event listener to each testimonial input
+    testimonialsLabels.forEach((label) => {
+      const inputId = label.getAttribute("for");
+      const input = document.getElementById(inputId);
+      input.addEventListener("change", handleCheckedState);
+    });
+  }
 
   // Function to format the JSON response object
   function formatJsonResponse(response) {
@@ -633,18 +718,21 @@ SOFTWARE. -->
             err.response?.data?.error || "An error occurred during the request";
           pushNotification(errorMessage, "error");
         } else if (err.response?.status === 502) {
-          const errorMessage = "Api Key is Not set, Redirecting you to Activation Portal";
+          const errorMessage =
+            "Api Key is Not set, Redirecting you to Activation Portal";
           pushNotification(errorMessage, "warning");
           setTimeout(() => {
             window.location.replace("https://wordhive.app/activate");
           }, 5000);
         } else if (err.request) {
           // Handle network errors (e.g., no internet connection)
-          const errorMessage = "Network error. Please check your internet connection.";
+          const errorMessage =
+            "Network error. Please check your internet connection.";
           pushNotification(errorMessage, "error");
         } else {
           const errorMessage = "An unknown error occurred.";
-          console.log(err)
+          console.log(jsonResponse);
+          console.log(err);
           pushNotification(errorMessage, "error");
         }
       });
@@ -754,7 +842,6 @@ SOFTWARE. -->
   // Funtions From search.js
 
   (function () {
-
     var isMobile = {
       Android: function () {
         return navigator.userAgent.match(/Android/i);
@@ -901,96 +988,6 @@ SOFTWARE. -->
       skillsWayPoint();
     });
   })();
-
-  // ---------------------------------------- Search Bar ---------------------------------------------------------
-
-  // ---------------------------------------- Example Slider ---------------------------------------------------------
-  function setupCarousel() {
-    // Get all the testimonial labels and dots labels
-    const testimonialsLabels = Array.from(
-      document.querySelectorAll('.testimonials label[for^="t-"]')
-    );
-    const dotsLabels = Array.from(
-      document.querySelectorAll('.dots label[for^="t-"]')
-    );
-
-    // Function to apply the initial styles
-    function applyInitialStyles() {
-      testimonialsLabels.forEach((label, index) => {
-        if (index === 0) {
-          label.style.transform = "translate3d(0, 0, 0)";
-          label.style.zIndex = "4";
-        } else {
-          label.style.transform = `translate3d(${
-            index * 300
-          }px, 0, -90px) rotateY(${-index * 15}deg)`;
-          label.style.zIndex = "1";
-        }
-      });
-
-      dotsLabels[0].classList.add("active");
-    }
-
-    // Function to handle the checked state
-    function handleCheckedState() {
-      const checkedValue = this.id;
-
-      testimonialsLabels.forEach((label, index) => {
-        const offset =
-          index -
-          testimonialsLabels.findIndex(
-            (item) => item.getAttribute("for") === checkedValue
-          );
-
-        if (offset === 0) {
-          label.style.transform = "translate3d(0, 0, 0)";
-          label.style.zIndex = "4";
-        } else {
-          const translateX =
-            offset > 0 ? `${offset * 300}px` : `${Math.abs(offset) * -300}px`;
-          const rotateY =
-            offset > 0 ? `${offset * -15}deg` : `${Math.abs(offset) * 15}deg`;
-          label.style.transform = `translate3d(${translateX}, 0, -90px) rotateY(${rotateY})`;
-          label.style.zIndex = offset === 1 ? "3" : "1";
-
-          // Set zIndex of the 3rd label to 0 when the first dot is checked
-          if (offset === -2 && checkedValue === "t-1") {
-            label.style.zIndex = "0";
-          }
-        }
-      });
-
-      dotsLabels.forEach((label) => {
-        if (label.getAttribute("for") === checkedValue) {
-          label.classList.add("active");
-        } else {
-          label.classList.remove("active");
-        }
-      });
-    }
-
-    // Attach event listener to each testimonial input
-    testimonialsLabels.forEach((label) => {
-      const inputId = label.getAttribute("for");
-      const input = document.getElementById(inputId);
-      input.addEventListener("change", handleCheckedState);
-    });
-
-    // Apply initial styles on page load
-    applyInitialStyles();
-
-    // Attach event listener to each testimonial input
-    testimonialsLabels.forEach((label) => {
-      const inputId = label.getAttribute("for");
-      const input = document.getElementById(inputId);
-      input.addEventListener("change", handleCheckedState);
-    });
-  }
-  // -------------------------------------Custom Bootstrap ProgressBar-----------------------------------------------
-
-  $(".progress .progress-bar").progressbar(); // bootstrap 3
-
-
 
   return (
     <>
