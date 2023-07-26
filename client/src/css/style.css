@@ -51,10 +51,10 @@ header{
   display: block !important;
   background-color: transparent !important;
 }
-.pronunciations.error{
+.pronunciations.err{
   color: var(--secondary-dark) !important;
   background-color: transparent !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
 }
 .type {
   background-color: transparent !important;
@@ -478,9 +478,12 @@ h1, h2, h3, h4, h5, h6, figure {
   cursor: pointer !important;
 }
 
-.word-collection .badge.error{
+.word-collection .badge.err{
   color: var(--secondary-dark) !important;
   background-color: transparent !important;
+  line-height: normal !important;
+  white-space: normal !important;
+  text-align: inherit !important;
 }
 
 #fh5co-started {
@@ -1078,13 +1081,13 @@ h1, h2, h3, h4, h5, h6, figure {
   mask-image: linear-gradient(to right, transparent 0%, black 20% 80%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20% 80%, transparent 100%);
 }
-.testimonials.error {
+.testimonials.err {
   color: var(--secondary-dark) !important;
   background-color: transparent !important;
   width: auto !important;
   min-height: auto !important;
 }
-.testimonials.error p{
+.testimonials.err p{
   font-weight: 600;
 }
 
@@ -1143,7 +1146,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 
 /* --------------------------------- Relation Timeline Boards --------------------------------------------- */
-#fh5co-started .container .row .col-md-12 .error{
+#fh5co-started .container .row .col-md-12 .err{
   color: var(--secondary-dark) !important;
   background-color: transparent !important;
   font-weight: 600 !important;

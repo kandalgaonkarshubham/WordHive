@@ -18,13 +18,16 @@ function Dictionary() {
   const [isSuccess, setIsSuccess] = useState(false);
   const urlWithProxy = "https://wordhive.dev/search";
   const urlWithProxyTTS = "https://wordhive.dev/tts";
+  
+  let frequencyComponentRefreshed = false;
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       const [entry] = entries;
-      if (entry.isIntersecting) {
-        // console.log("Component entered the viewport");
+      if (entry.isIntersecting && !frequencyComponentRefreshed) {
+        console.log("Component entered the viewport");
         document.getElementById("updateFrequency").click();
+        frequencyComponentRefreshed = true;
       }
     });
     if (frequencyRef.current) {
@@ -312,7 +315,13 @@ SOFTWARE. -->
       initNodes();
       redrawScene();
     })();
-    
+
+    // Clean up the observer when the component is unmounted
+    return () => {
+      if (frequencyRef.current) {
+        observer.unobserve(frequencyRef.current);
+      }
+    };
   }, []);
 
   // Function to format the JSON response object
@@ -711,7 +720,7 @@ SOFTWARE. -->
 
     if (relationships.length === 0) {
       return (
-        <p className="error">
+        <p className="err">
           <i className="fa-solid fa-triangle-exclamation"></i> We regret to
           inform you that no relationships are available for the provided word
           within our records <i className="fa-solid fa-face-sad-tear"></i>
@@ -1200,7 +1209,7 @@ SOFTWARE. -->
                         </span>
                       ))
                     ) : (
-                      <span className="pronunciations error">
+                      <span className="pronunciations err">
                         <i className="fa-solid fa-triangle-exclamation"></i>{" "}
                         Regrettably, we were unable to find any Pronunciations
                         for the word you have requested in our database{" "}
@@ -1232,7 +1241,7 @@ SOFTWARE. -->
                     </div>
                   ) : (
                     <div id="definitions" className="px-5 word-collection">
-                      <span className="badge error">
+                      <span className="badge err">
                         <i className="fa-solid fa-triangle-exclamation"></i>{" "}
                         Regrettably, we were unable to find any Synonyms for the
                         word you have requested in our database{" "}
@@ -1264,7 +1273,7 @@ SOFTWARE. -->
                     </div>
                   ) : (
                     <div id="definitions" className="px-5 word-collection">
-                      <span className="badge error">
+                      <span className="badge err">
                         <i className="fa-solid fa-triangle-exclamation"></i>{" "}
                         Regrettably, we were unable to find any Antonyms for the
                         word you have requested in our database{" "}
@@ -1297,7 +1306,7 @@ SOFTWARE. -->
                     </div>
                   ) : (
                     <div id="definitions" className="px-5 word-collection">
-                      <span className="badge error">
+                      <span className="badge err">
                         <i className="fa-solid fa-triangle-exclamation"></i>{" "}
                         Regrettably, we were unable to find any Rhymes for the
                         word you have requested in our database{" "}
@@ -1327,7 +1336,7 @@ SOFTWARE. -->
                     </div>
                   ) : (
                     <div id="definitions" className="px-5 word-collection">
-                      <span className="badge error">
+                      <span className="badge err">
                         <i className="fa-solid fa-triangle-exclamation"></i>{" "}
                         Regrettably, we were unable to find any Syllables for
                         the word you have requested in our database{" "}
@@ -1555,7 +1564,7 @@ SOFTWARE. -->
                         </div>
                       </>
                     ) : (
-                      <div className="testimonials error">
+                      <div className="testimonials err">
                         <p className="col-8">
                           <i className="fa-solid fa-triangle-exclamation"></i>{" "}
                           Our apologies, but with regret, we inform you that no
