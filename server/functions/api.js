@@ -28,7 +28,7 @@ const activateApiKeyMiddleware = (time) => {
 // Route for HTML content
 
 // Route to handle GET requests to the root URL
-app.get("/", (req, res) => {
+router.get("/", (req, res) => {
   const styles = `
     <style>
         *{
@@ -85,24 +85,27 @@ router.get("/activateAPI", (req, res) => {
   const tValue = req.query.t;
   console.log("t value:", tValue);
 
-  if (apiKey) {
-    res.status(400).json({ success: false, message: "API key is already active" });
-  }else{
+  if (isNaN(tValue)) {
+    res.status(400).json({ success: false, message: "Empty or Invalid Value provided" });
+  } else {
+    
+    if (apiKey !== "") {
+      res.status(400).json({ success: false, message: `API key is already active${apiKey}` });
+    }else{
 
-    if (tValue != 0) {
+      if (tValue != 0) {
 
-      apiKey = process.env.API_KEY; // Accesing ApiKey from Netlify
-      activateApiKeyMiddleware(1);
+        apiKey = "process.env.API_KEY"; // Accesing ApiKey from Netlify
+        activateApiKeyMiddleware(tValue);
 
-      // Send a success response
-      res.json({ success: true, message: `API key activated successfully for ${tValue} ${process.env.API_KEY} minutes` });
-    } else {
-      // Send an error response for invalid tValue
-      res.status(400).json({ success: false, message: "Invalid Value provided" });
+        // Send a success response
+        res.json({ success: true, message: `API key activated successfully for ${tValue} minutes` });
+      } else {
+        // Send an error response for invalid tValue
+        res.status(400).json({ success: false, message: "Invalid Value provided" });
+      }
     }
-
   }
-  // res.send("Received Api Activation Request");
 });
 
 
@@ -390,5 +393,5 @@ router.get("/tts", (req, res) => {
 
 app.use('/', router);
 
-module.exports.handler = serverless(app);
-// module.exports = app;
+module.exports.handler = serverless(app);   // For Production
+// module.exports = app;                    // For Local Development

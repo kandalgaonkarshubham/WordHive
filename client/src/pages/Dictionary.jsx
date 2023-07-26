@@ -618,6 +618,7 @@ SOFTWARE. -->
         // console.log(res.data);
       })
       .catch((err) => {
+        console.log(err)
         setFetching(false);
         document
           .getElementById("searchbar")
@@ -631,7 +632,7 @@ SOFTWARE. -->
           const errorMessage =
             err.response?.data?.error || "An error occurred during the request";
           pushNotification(errorMessage, "error");
-        } else if (err.response?.status === 999) {
+        } else if (err.response?.status === 502) {
           const errorMessage =
             "Api Key is Not set, Redirecting you to Activation Portal";
           pushNotification(errorMessage, "warning");
