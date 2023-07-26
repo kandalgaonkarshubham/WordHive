@@ -618,7 +618,6 @@ SOFTWARE. -->
         // console.log(res.data);
       })
       .catch((err) => {
-        console.log(err.response)
         setFetching(false);
         document
           .getElementById("searchbar")
@@ -633,8 +632,7 @@ SOFTWARE. -->
             err.response?.data?.error || "An error occurred during the request";
           pushNotification(errorMessage, "error");
         } else if (err.response?.status === 502) {
-          const errorMessage =
-            "Api Key is Not set, Redirecting you to Activation Portal";
+          const errorMessage = "Api Key is Not set, Redirecting you to Activation Portal";
           pushNotification(errorMessage, "warning");
           setTimeout(() => {
             window.location.replace("https://wordhive.app/activate");

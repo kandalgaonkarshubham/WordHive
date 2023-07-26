@@ -93,12 +93,12 @@ router.get("/activateAPI", (req, res) => {
   } else {
     
     if (apiKey !== "") {
-      res.status(400).json({ success: false, message: `API key is already active${apiKey}` });
+      res.status(400).json({ success: false, message: `API key is already active` });
     }else{
 
       if (tValue != 0) {
 
-        apiKey = "process.env.API_KEY"; // Accesing ApiKey from Netlify
+        apiKey = process.env.API_KEY; // Accesing ApiKey from Netlify
         activateApiKeyMiddleware(tValue);
 
         // Send a success response
@@ -174,7 +174,7 @@ router.get("/search", async (req, res) => {
 
   } catch (error) {
 
-    console.log(" wordapi logs")
+    console.log(" wordapi logs");
     console.error(error);
   
     if (error.response.data.message === 'Invalid API key. Go to https://docs.rapidapi.com/docs/keys for more info.') {
