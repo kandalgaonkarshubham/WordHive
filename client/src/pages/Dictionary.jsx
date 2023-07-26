@@ -19,15 +19,12 @@ function Dictionary() {
   const urlWithProxy = "https://wordhive.dev/search";
   const urlWithProxyTTS = "https://wordhive.dev/tts";
   
-  let frequencyComponentRefreshed = false;
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       const [entry] = entries;
-      if (entry.isIntersecting && !frequencyComponentRefreshed) {
-        console.log("Component entered the viewport");
+      if (entry.isIntersecting) {
         document.getElementById("updateFrequency").click();
-        frequencyComponentRefreshed = true;
       }
     });
     if (frequencyRef.current) {
@@ -316,13 +313,8 @@ SOFTWARE. -->
       redrawScene();
     })();
 
-    // Clean up the observer when the component is unmounted
-    return () => {
-      if (frequencyRef.current) {
-        observer.unobserve(frequencyRef.current);
-      }
-    };
-  }, []);
+
+}, []);
 
   // Function to format the JSON response object
   function formatJsonResponse(response) {
