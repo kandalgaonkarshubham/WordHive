@@ -1,0 +1,1 @@
+This _redirects file is required for production builds that use react router to function
