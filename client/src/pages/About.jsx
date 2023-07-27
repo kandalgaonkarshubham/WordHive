@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Loader from "../../components/Loader";
 import '../css/style.css';
 
 const About = () => {
+  const aboutRef = useRef(null);
 
   useEffect(() => {
 
@@ -48,12 +49,15 @@ const About = () => {
       );
     };
 
-    contentWayPoint();
-
-    // Clean up the waypoint instances when the component unmounts
-    return () => {
-      $(".animate-box").waypoint("destroy");
-    };
+    const observer = new IntersectionObserver((entries) => {
+      const [entry] = entries;
+      if (entry.isIntersecting) {
+        contentWayPoint();
+      }
+    });
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
+    }
     
   }, []);
 
@@ -267,7 +271,7 @@ const About = () => {
                 </figure>
               </div>
 
-              <div className="col-md-6  text-justify">
+              <div ref={aboutRef} className="col-md-6  text-justify">
                 <h2 className="fh5co-lead animate-box">
                   Powerful Integration: Unleashing the Potential of React, Vite,
                   and Express
