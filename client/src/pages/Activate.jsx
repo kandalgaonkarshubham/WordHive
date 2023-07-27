@@ -227,7 +227,6 @@ function Activate() {
             alt="Logo created with the help of app.logo.com"
           />
           <h3>Enter the Passcode</h3>
-          <h3>{passCode}</h3>
           <div className="row">
             <div className="col-12">
               <div className="wave-group">

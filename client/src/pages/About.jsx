@@ -114,7 +114,7 @@ const About = () => {
     };
 
     $(function () {
-      contentWayPoint();
+      // contentWayPoint();
       loaderPage();
       fullHeight();
       parallax();
