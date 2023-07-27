@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Loader from "../../components/Loader";
 import '../css/style.css';
-import $ from "jquery";
 
 const About = () => {
 
