@@ -6,6 +6,7 @@ import '../css/style.css';
 const About = () => {
 
   useEffect(() => {
+
     let contentWayPoint;
 
     contentWayPoint = () => {
@@ -47,8 +48,9 @@ const About = () => {
         { offset: "85%" }
       );
     };
-    
+
     contentWayPoint();
+    
   }, []);
 
   (function () {
