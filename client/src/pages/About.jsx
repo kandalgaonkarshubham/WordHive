@@ -7,7 +7,7 @@ const About = () => {
 
   useEffect(() => {
 
-    (function () {
+    // (function () {
       var isMobile = {
         Android: function () {
           return navigator.userAgent.match(/Android/i);
@@ -111,17 +111,17 @@ const About = () => {
         $(".fh5co-loader").fadeOut(1500);
       };
 
-      $(function () {
-        contentWayPoint();
-        loaderPage();
-        fullHeight();
-        parallax();
-        skillsWayPoint();
-      });
-    })();
-
+    // })();
+    // $(function () {
+      contentWayPoint();
+      loaderPage();
+      fullHeight();
+      parallax();
+      skillsWayPoint();
+    // });
+    
   }, []);
-  
+
   function toggleExpand(n, link) {
     var featureCopy = document.querySelector(".feature-copy" + n);
     var featureP = document.getElementById("feature" + n);
