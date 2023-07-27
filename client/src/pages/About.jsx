@@ -6,8 +6,7 @@ const About = () => {
   const aboutRef = useRef(null);
 
   useEffect(() => {
-
-    // (function () {
+    (function ($) {
       var isMobile = {
         Android: function () {
           return navigator.userAgent.match(/Android/i);
@@ -51,7 +50,7 @@ const About = () => {
 
       var contentWayPoint = function () {
         var i = 0;
-        $(".animate-box").waypoint(
+        $(".animate-boxx").waypoint(
           function (direction) {
             if (
               direction === "down" &&
@@ -61,7 +60,7 @@ const About = () => {
 
               $(this.element).addClass("item-animate");
               setTimeout(function () {
-                $("body .animate-box.item-animate").each(function (k) {
+                $("body .animate-boxx.item-animate").each(function (k) {
                   var el = $(this);
                   setTimeout(
                     function () {
@@ -111,15 +110,15 @@ const About = () => {
         $(".fh5co-loader").fadeOut(1500);
       };
 
-    // })();
-    // $(function () {
-      contentWayPoint();
-      loaderPage();
-      fullHeight();
-      parallax();
-      skillsWayPoint();
-    // });
-    
+      $(function () {
+        contentWayPoint();
+        loaderPage();
+        fullHeight();
+        parallax();
+        skillsWayPoint();
+      });
+    })(jQuery);
+
   }, []);
 
   function toggleExpand(n, link) {
@@ -163,16 +162,16 @@ const About = () => {
             <div className="fh5co-intro no-js-fullheight">
               <div className="fh5co-intro-text">
                 <div className="fh5co-center-position">
-                  <h2 className="animate-box">About</h2>
+                  <h2 className="animate-boxx">About</h2>
                   {/* <!-- Background : https://www.needpix.com/photo/download/1362354/honeycomb-pattern-print-wallpaper-background-orange-geometric-scrapbooking-illustration --> */}
-                  <h3 className="animate-box"></h3>
+                  <h3 className="animate-boxx"></h3>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div id="fh5co-info" className="animate-box">
+        <div id="fh5co-info" className="animate-boxx">
           <div className="container">
             <div className="row">
               <div className="col-md-12 fh5co-heading text-justify">
@@ -213,7 +212,7 @@ const About = () => {
 
             <div className="row row-bottom-padded-lg my-5 d-flex align-items-center">
               <div className="col-md-6">
-                <figure className="animate-box">
+                <figure className="animate-boxx">
                   <img
                     className="img-fluid rounded"
                     src="../images/vite.png"
@@ -223,11 +222,11 @@ const About = () => {
               </div>
 
               <div ref={aboutRef} className="col-md-6  text-justify">
-                <h2 className="fh5co-lead animate-box">
+                <h2 className="fh5co-lead animate-boxx">
                   Powerful Integration: Unleashing the Potential of React, Vite,
                   and Express
                 </h2>
-                <p className="fh5co-sub-lead animate-box">
+                <p className="fh5co-sub-lead animate-boxx">
                   In this project, I harnessed the combined power of React,
                   Vite, and Express to create a seamless and efficient web
                   application with the help of{" "}
@@ -246,7 +245,7 @@ const About = () => {
               </div>
 
               <div className="text-justify mx-2">
-                <p className="fh5co-sub-lead animate-box">
+                <p className="fh5co-sub-lead animate-boxx">
                   On the frontend, React played a pivotal role in crafting a
                   dynamic and interactive user interface. With React's
                   component-based architecture, I designed and implemented the
@@ -255,7 +254,7 @@ const About = () => {
                   relations. React's virtual DOM rendered the components
                   efficiently, ensuring optimal performance and responsiveness.
                 </p>
-                <p className="fh5co-sub-lead animate-box">
+                <p className="fh5co-sub-lead animate-boxx">
                   To further enhance the development process, I utilized Vite as
                   the build tool and development server. Vite's lightning-fast
                   bundling and hot module replacement capabilities expedited the
@@ -265,7 +264,7 @@ const About = () => {
                   development, empowering me to iterate and fine-tune the
                   application rapidly.
                 </p>
-                <p className="fh5co-sub-lead animate-box">
+                <p className="fh5co-sub-lead animate-boxx">
                   In summary, Express served as the backend foundation, enabling
                   API integration, while React empowered the frontend with its
                   component-based structure and interactive elements. Vite, as
@@ -278,14 +277,14 @@ const About = () => {
           </div>
         </div>
 
-        <div id="fh5co-features" className="animate-box">
+        <div id="fh5co-features" className="animate-boxx">
           <div className="container text-center">
             <h2>
               <b>WordHive boasts a diverse range of impressive features</b>
             </h2>
             <div className="services-padding">
-              <div className="row animate-box">
-                <div className="col-md-4 animate-box fadeInUp animated-fast">
+              <div className="row animate-boxx">
+                <div className="col-md-4 animate-boxx fadeInUp animated-fast">
                   <div className="feature-left text-center">
                     <span className="icon">
                       <i className="icon-search"></i>
@@ -302,7 +301,7 @@ const About = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4 animate-box fadeInUp animated-fast">
+                <div className="col-md-4 animate-boxx fadeInUp animated-fast">
                   <div className="feature-left text-center">
                     <span className="icon">
                       <i className="icon-flow-tree"></i>
@@ -322,7 +321,7 @@ const About = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4 animate-box fadeInUp animated-fast">
+                <div className="col-md-4 animate-boxx fadeInUp animated-fast">
                   <div className="feature-left text-center">
                     <span className="icon">
                       <i className="icon-users"></i>
@@ -342,8 +341,8 @@ const About = () => {
                   </div>
                 </div>
               </div>
-              <div className="row animate-box">
-                <div className="col-md-4 animate-box fadeInUp animated-fast">
+              <div className="row animate-boxx">
+                <div className="col-md-4 animate-boxx fadeInUp animated-fast">
                   <div className="feature-left text-center">
                     <span className="icon">
                       <i className="icon-megaphone"></i>
@@ -370,7 +369,7 @@ const About = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4 animate-box fadeInUp animated-fast">
+                <div className="col-md-4 animate-boxx fadeInUp animated-fast">
                   <div className="feature-left text-center">
                     <span className="icon">
                       <i className="icon-genius"></i>
@@ -388,7 +387,7 @@ const About = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-4 animate-box fadeInUp animated-fast">
+                <div className="col-md-4 animate-boxx fadeInUp animated-fast">
                   <div className="feature-left text-center">
                     <span className="icon">
                       <i className="icon-map"></i>
@@ -412,7 +411,7 @@ const About = () => {
           </div>
         </div>
 
-        <footer style={{"display":"block"}} className="animate-box">
+        <footer style={{"display":"block"}} className="animate-boxx">
           <div id="fh5co-footer" className="fh5co-bg-dark">
             <div className="container">
               <div className="row">
