@@ -804,6 +804,10 @@ h1, h2, h3, h4, h5, h6, figure {
   opacity: 0;
 }
 
+.animated-fast{
+  opacity: 1 !important;
+}
+
 /* Search bar component from https://uiverse.io/EddyBel/rare-baboon-42*/
 
 #searchbar {
