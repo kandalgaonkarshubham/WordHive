@@ -10,7 +10,7 @@ function Activate() {
   const intervalInput = useRef();
   const [passCodeAuthorized, setpassCodeAuthorized] = useState(false);
   const [axiosCall, setaxiosCall] = useState(false);
-  const passCode = import.meta.env.PASS_CODE; // Password stored in Netlify Environment Variable
+  const passCode = import.meta.env.VITE_PASSCODE; // Password stored in Netlify Environment Variable
   let tValue;
 
   useEffect(() => {
