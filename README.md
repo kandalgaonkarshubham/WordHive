@@ -1,8 +1,10 @@
 
 # WordHive - Online Dictionary and Word Relations Explorer
 
-![Logo](client/dist/images/png/logofull.png)
 
+<p align="center" width="100%">
+    <img width="80%" alt="Logo" src="client/dist/images/png/logofull.png"> 
+</p>
 
 WordHive is an online dictionary and word relations explorer built using React.js, Vite, and Express. This web application provides users with comprehensive information about searched words, including synonyms, antonyms, definitions, example statements, pronunciation, and syllable breakdowns. Additionally, WordHive allows users to explore the intricate relationships between words and phrases, uncovering hierarchical connections and compositional relationships.
 
@@ -41,7 +43,7 @@ The Frontend is hosted at [wordhive.app](https://wordhive.app), and Backend is h
 
 
 <p align="center" width="100%">
-    <img width="33%" alt="React+Vite+express" src="client/dist/images/vite.png"> 
+    <img width="100%" alt="React+Vite+express" src="client/dist/images/vite.png"> 
 </p>
 
 In this project following [this](https://github.com/NathanKr/react-vite-express-setup) guide, I skillfully integrated React, Vite, and Express to create a seamless and efficient web application. Leveraging Express, I established backend API calls, allowing smooth communication between the frontend and the word API. React played a pivotal role in crafting the dynamic and interactive user interface, rendering components efficiently with its virtual DOM. Vite served as the build tool and development server, expediting the development cycle and providing instantaneous feedback during the iterative process.
