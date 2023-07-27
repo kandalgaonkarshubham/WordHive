@@ -1,55 +1,45 @@
 import React, { useEffect } from 'react';
 import Loader from "../../components/Loader";
 import '../css/style.css';
-
+import Waypoint from "waypoint";
 
 const About = () => {
 
   useEffect(() => {
 
-    // let contentWayPoint;
+    const contentWayPoint = () => {
+      const elements = document.querySelectorAll(".animate-box");
 
-    // contentWayPoint = () => {
-    //   var i = 0;
-    //   $(".animate-box").waypoint(
-    //     function (direction) {
-    //       if (
-    //         direction === "down" &&
-    //         !$(this.element).hasClass("animated-fast")
-    //       ) {
-    //         i++;
+      elements.forEach((element) => {
+        new Waypoint({
+          element: element,
+          handler: function (direction) {
+            if (
+              direction === "down" &&
+              !element.classList.contains("animated-fast")
+            ) {
+              element.classList.add("animated-fast");
+              element.classList.add("item-animate");
+              setTimeout(() => {
+                element.classList.add("fadeIn");
+                element.classList.remove("item-animate");
+              }, 50);
+            }
+          },
+          offset: "85%",
+        });
+      });
+    };
 
-    //         $(this.element).addClass("item-animate");
-    //         setTimeout(function () {
-    //           $("body .animate-box.item-animate").each(function (k) {
-    //             var el = $(this);
-    //             setTimeout(
-    //               function () {
-    //                 var effect = el.data("animate-effect");
-    //                 if (effect === "fadeIn") {
-    //                   el.addClass("fadeIn animated-fast");
-    //                 } else if (effect === "fadeInLeft") {
-    //                   el.addClass("fadeInLeft animated-fast");
-    //                 } else if (effect === "fadeInRight") {
-    //                   el.addClass("fadeInRight animated-fast");
-    //                 } else {
-    //                   el.addClass("fadeInUp animated-fast");
-    //                 }
+    contentWayPoint();
 
-    //                 el.removeClass("item-animate");
-    //               },
-    //               k * 100,
-    //               "easeInOutExpo"
-    //             );
-    //           });
-    //         }, 50);
-    //       }
-    //     },
-    //     { offset: "85%" }
-    //   );
-    // };
-
-    // contentWayPoint();
+    // Clean up the waypoint instances when the component unmounts
+    return () => {
+      const elements = document.querySelectorAll(".animate-box");
+      elements.forEach((element) => {
+        Waypoint.destroyAllForElement(element);
+      });
+    };
     
   }, []);
 
