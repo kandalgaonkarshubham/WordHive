@@ -39,8 +39,10 @@ The Frontend is hosted at [wordhive.app](https://wordhive.app), and Backend is h
 
 ## Project Integration
 
-![React+Vite+express](client/dist/images/vite.png)
 
+<p align="center" width="100%">
+    <img width="33%" alt="React+Vite+express" src="client/dist/images/vite.png"> 
+</p>
 
 In this project following [this](https://github.com/NathanKr/react-vite-express-setup) guide, I skillfully integrated React, Vite, and Express to create a seamless and efficient web application. Leveraging Express, I established backend API calls, allowing smooth communication between the frontend and the word API. React played a pivotal role in crafting the dynamic and interactive user interface, rendering components efficiently with its virtual DOM. Vite served as the build tool and development server, expediting the development cycle and providing instantaneous feedback during the iterative process.
 
