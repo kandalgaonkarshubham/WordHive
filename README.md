@@ -94,7 +94,7 @@ WordHive harnesses the power of two essential APIs to provide accurate word pron
 <summary>Home Page</summary>
 <br>
 <p align="center" width="100%">
-    <img width="80%" alt="Logo" src="client/src/pages/screenshots/wordhive-home.png"> 
+    <img width="80%" alt="Logo" src="client/screenshots/wordhive-home.png"> 
 </p>
 </details>
 
@@ -102,7 +102,7 @@ WordHive harnesses the power of two essential APIs to provide accurate word pron
 <summary>Search/Dictionary Page</summary>
 <br>
 <p align="center" width="100%">
-    <img width="80%" alt="Logo" src="client/src/pages/screenshots/wordhive-search.png"> 
+    <img width="80%" alt="Logo" src="client/screenshots/wordhive-search.png"> 
 </p>
 </details>
 
@@ -116,7 +116,7 @@ No About page preview because it is too long.
 <summary>Error Page</summary>
 <br>
 <p align="center" width="100%">
-    <img width="80%" alt="Logo" src="client/src/pages/screenshots/wordhive-error.png"> 
+    <img width="80%" alt="Logo" src="client/screenshots/wordhive-error.png"> 
 </p>
 </details>
 
@@ -126,7 +126,7 @@ No About page preview because it is too long.
 <summary>Activation Page</summary>
 <br>
 <p align="center" width="100%">
-    <img width="80%" alt="Logo" src="client/src/pages/screenshots/wordhive-activation.png"> 
+    <img width="80%" alt="Logo" src="client/screenshots/wordhive-activation.png"> 
 </p>
 </details>
 
