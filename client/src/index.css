@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh !important;
 }
 #body{
-  height: 100vh !important;
+  min-height: 100vh !important;
 }
