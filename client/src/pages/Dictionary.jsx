@@ -5,8 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import Loader from "../../components/Loader";
-import '../css/style.css';
-
+import "../css/style.css";
 
 function Dictionary() {
   const [searchInput, setSearchInput] = useState("");
@@ -1755,12 +1754,12 @@ SOFTWARE. -->
   );
 }
 
-export default Dictionary
+export default Dictionary;
 
-// <!------------------------------------------- 
-// Profile - FREE HTML5 TEMPLATE 
+// <!-------------------------------------------
+// Profile - FREE HTML5 TEMPLATE
 // DESIGNED & DEVELOPED by FreeHTML5.co
-    
+
 // Website: 		http://freehtml5.co/
 // Email: 			info@freehtml5.co
 // Twitter: 		http://twitter.com/fh5co

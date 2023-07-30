@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Loader from "../../components/Loader";
 import '../css/index.css';
 
@@ -173,19 +174,19 @@ function Home() {
         <div className="nav__content">
           <ul className="nav__list">
             <li className="nav__list-item active-nav">
-              <a href="#" className="hover-target">
+              <Link to="#" className="hover-target">
                 home
-              </a>
+              </Link>
             </li>
             <li className="nav__list-item">
-              <a href="/dictionary" className="hover-target">
+              <Link to="/dictionary" className="hover-target">
                 search
-              </a>
+              </Link>
             </li>
             <li className="nav__list-item">
-              <a href="/about" className="hover-target">
+              <Link to="/about" className="hover-target">
                 about
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

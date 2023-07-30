@@ -27,6 +27,12 @@ header{
   outline: none;
 }
 
+.disappear {
+  opacity: 0;
+}
+.appear {
+  opacity: 1;
+}
 .invisible {
   display: none;
 }
@@ -147,10 +153,11 @@ canvas {
   position: relative;
   overflow-x: hidden;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+
 }
 .offcanvas #page {
   overflow: hidden;
@@ -231,8 +238,13 @@ h1, h2, h3, h4, h5, h6, figure {
   background-attachment: fixed;
   background-image: url(../images/cover_bg_3.jpg);
   position: relative;
-  height: 600px;
+  height: 100vh;
   width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 #fh5co-header .overlay,
 .fh5co-cover .overlay {
