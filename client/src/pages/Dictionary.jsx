@@ -21,6 +21,7 @@ function Dictionary() {
   const urlWithProxyTTS = "https://wordhive.dev/tts";
 
   useEffect(() => {
+    $(".fh5co-loader").fadeOut(1500);
     const observer = new IntersectionObserver((entries) => {
       const [entry] = entries;
       if (entry.isIntersecting) {
@@ -698,7 +699,9 @@ SOFTWARE. -->
 
         setupCarousel();
         setIsSuccess(true);
-        smoothScrollToElement("smoothFocus");
+        setTimeout(() => {
+          smoothScrollToElement("smoothFocus");
+        }, 500);
         // console.log(jsonResponse);
         // console.log(res.data);
       })
