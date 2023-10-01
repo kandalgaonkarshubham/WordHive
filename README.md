@@ -134,7 +134,7 @@ I have developed an activation page that verifies the presence of an API key in 
 
 The reason behind implementing this functionality is to prevent excessive usage of the API key due to hosting on Netlify. It is essential to note that this feature solely serves the purpose of hosting and can be safely removed from the codebase without affecting any other functionalities.
 
-If you want to bypass this activation page, Drop me a line at my [Email](kandalgaonkarshubham@gmail.com), and I will send you the activation code.
+If you want to bypass this activation page, Drop me a line at my [Email](mailto:kandalgaonkarshubham@gmail.com), and I will send you the activation code.
 
 ## Acknowledgements and Open Source Contributions
 
