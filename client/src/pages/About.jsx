@@ -440,7 +440,7 @@ const About = () => {
                       realm of Web Development.”
                     </i>
                   </p>
-                  <p>WordHive Github Repository : <a href="https://github.com/kandalgaonkarshubham/WordHive" target="_blank">WordHive</a></p>
+                  <p style={{color:'#2f3c4f'}}><a href="https://github.com/kandalgaonkarshubham/WordHive" target="_blank">WordHive Github Repository</a></p>
                 </div>
               </div>
             </div>
