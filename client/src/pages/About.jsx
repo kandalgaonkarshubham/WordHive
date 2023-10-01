@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Loader from "../../components/Loader";
 import '../css/style.css';
+import { Helmet } from 'react-helmet';
 
 const About = () => {
   const aboutRef = useRef(null);
@@ -154,6 +155,10 @@ const About = () => {
 
   return (
     <>
+    <Helmet>
+        <title>A captivating web project built using ReactJs, powered by a comprehensive Word API</title>
+        <meta name="description" content="As an innovative online dictionary, WordHive offers an immersive word exploration experience, providing users with an array of valuable information and linguistic insights."></meta>
+    </Helmet>
       <Loader></Loader>
       <div id="page">
         <div id="fh5co-hero" className="no-js-fullheight mb-5">
@@ -435,6 +440,7 @@ const About = () => {
                       realm of Web Development.”
                     </i>
                   </p>
+                  <p>WordHive Github Repository : <a href="https://github.com/kandalgaonkarshubham/WordHive" target="_blank">WordHive</a></p>
                 </div>
               </div>
             </div>

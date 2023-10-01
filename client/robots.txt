@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /activate/
+
+# Allow crawling of specific routes
+Allow: /$
+Allow: /dictionary
+Allow: /about
+
+Sitemap: https://wordhive.app

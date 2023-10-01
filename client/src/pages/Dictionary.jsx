@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import Loader from "../../components/Loader";
 import "../css/style.css";
+import { Helmet } from "react-helmet";
 
 function Dictionary() {
   const [searchInput, setSearchInput] = useState("");
@@ -993,6 +994,11 @@ SOFTWARE. -->
 
   return (
     <>
+    <Helmet>
+        <title>Let your mind thrive, with knowledge from WordHive</title>
+        <meta name="description" content="The key to unlocking knowledge lies in the search for a single word"></meta>
+    </Helmet>
+
       <Loader></Loader>
       <Tooltip id="my-tooltip" />
       <ToastContainer newestOnTop />

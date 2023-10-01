@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Loader from "../../components/Loader";
 import '../css/index.css';
+import { Helmet } from "react-helmet";
 
 function Home() {
 
@@ -151,6 +152,11 @@ function Home() {
 
   return (
     <>
+    <Helmet>
+        <meta name="description" content="Your ultimate online dictionary and language exploration tool. Discover the meanings, synonyms, antonyms, and usage examples of words. Explore intricate word relationships with a breath-taking and User-friendly interface."></meta>
+        <meta name="keywords" content="wordhive, word, hive, word dictionary, word definitions, word search, vocabulary,Linguistic Resources,Educational App,Word Pronunciation,Dictionary App,Word Meanings,Word Usage,lexicon,Word Exploration,Linguistic Knowledge,frequency scoring, word frequency,synonyms, antonyms, definitions, examples, rhymes, Pronunciation, syllables, type of, instance of,word instances, entails, similarity, similarities, substances, categories, word region, pertains to, word usage, relations, relationship, word parts"></meta>
+    </Helmet>
+
     <Loader></Loader>
       <header className="cd-header">
         <div className="header-wrapper">
@@ -649,10 +655,10 @@ function Home() {
             </div>
 
             <div className="github my-auto">
-              <a className="image  hover-target" href="https://github.com/kandalgaonkarshubham" target="_blank">
+              <a className="image hover-target" href="https://github.com/kandalgaonkarshubham/WordHive" target="_blank">
                 <i className="fa-brands fa-github"></i>
               </a>
-              <p>Visit my Github Page</p>
+              <p>Visit the Github Page</p>
             </div>
 
           </div>
