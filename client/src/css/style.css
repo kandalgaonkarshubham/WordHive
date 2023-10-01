@@ -1477,6 +1477,53 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 
+.GithubBtn {
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: .4s;
+  cursor: pointer;
+  position: relative;
+  background-color: rgb(31, 31, 31);
+  overflow: hidden;
+}
+
+.GithubsvgIcon {
+  transition-duration: .3s;
+}
+
+.GithubsvgIcon path {
+  fill: white;
+}
+
+.Githubtext {
+  position: absolute;
+  color: rgb(255, 255, 255);
+  width: 120px;
+  font-weight: 600;
+  opacity: 0;
+  transition-duration: .4s;
+}
+
+.GithubBtn:hover {
+  width: 110px;
+  transition-duration: .4s;
+  border-radius: 30px;
+}
+
+.GithubBtn:hover .Githubtext {
+  opacity: 1;
+  transition-duration: .4s;
+}
+
+.GithubBtn:hover .GithubsvgIcon {
+  opacity: 0;
+  transition-duration: .3s;
+}
 
 
 .no-js-fullheight {
