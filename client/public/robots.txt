@@ -6,4 +6,4 @@ Allow: /$
 Allow: /dictionary
 Allow: /about
 
-Sitemap: https://wordhive.app
+Sitemap: https://wordhive.app/sitemap.xml
