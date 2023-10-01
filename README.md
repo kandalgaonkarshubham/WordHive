@@ -134,6 +134,8 @@ I have developed an activation page that verifies the presence of an API key in 
 
 The reason behind implementing this functionality is to prevent excessive usage of the API key due to hosting on Netlify. It is essential to note that this feature solely serves the purpose of hosting and can be safely removed from the codebase without affecting any other functionalities.
 
+If you want to bypass this activation page, Drop me a line at my [Email](kandalgaonkarshubham@gmail.com), and I will send you the activation code.
+
 ## Acknowledgements and Open Source Contributions
 
 WordHive is a testament to the collaborative and supportive nature of the open-source community. Throughout the development process, I have utilized various open-source elements and pages sourced from platforms like [UIverse](https://uiverse.io) and [CodePen](https://codepen.io/). These invaluable contributions played a significant role in shaping the visual appeal and functionality of WordHive.
