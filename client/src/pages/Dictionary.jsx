@@ -997,6 +997,7 @@ SOFTWARE. -->
     <Helmet>
         <title>Let your mind thrive, with knowledge from WordHive</title>
         <meta name="description" content="The key to unlocking knowledge lies in the search for a single word"></meta>
+        <meta name="keywords" content="wordhive,dictionary,Word Dictionary,search,search word"></meta>
     </Helmet>
 
       <Loader></Loader>

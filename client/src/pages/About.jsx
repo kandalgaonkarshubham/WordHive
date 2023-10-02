@@ -163,6 +163,7 @@ const About = () => {
     <Helmet>
         <title>A captivating web project built using ReactJs, powered by a comprehensive Word API</title>
         <meta name="description" content="As an innovative online dictionary, WordHive offers an immersive word exploration experience, providing users with an array of valuable information and linguistic insights."></meta>
+        <meta name="keywords" content="wordhive,about"></meta>
     </Helmet>
       <Loader></Loader>
       <div id="page">
@@ -226,7 +227,7 @@ const About = () => {
                   <img
                     className="img-fluid rounded"
                     src="../images/vite.png"
-                    alt="Created in Canva"
+                    alt="WordHive React and Express Integration"
                   />
                 </figure>
               </div>

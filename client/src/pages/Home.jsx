@@ -154,7 +154,7 @@ function Home() {
     <>
     <Helmet>
         <meta name="description" content="Your ultimate online dictionary and language exploration tool. Discover the meanings, synonyms, antonyms, and usage examples of words. Explore intricate word relationships with a breath-taking and User-friendly interface."></meta>
-        <meta name="keywords" content="wordhive, word, hive, word dictionary, word definitions, word search, vocabulary,Linguistic Resources,Educational App,Word Pronunciation,Dictionary App,Word Meanings,Word Usage,lexicon,Word Exploration,Linguistic Knowledge,frequency scoring, word frequency,synonyms, antonyms, definitions, examples, rhymes, Pronunciation, syllables, type of, instance of,word instances, entails, similarity, similarities, substances, categories, word region, pertains to, word usage, relations, relationship, word parts"></meta>
+        <meta name="keywords" content="wordhive,wordhive app, wordhive game, word, hive,wordhive.com,wordhive.app, word dictionary, word definitions, word search,Word Hive,Hive of Words,Word Dictionary,Word Definitions,Word Search Tool,Synonym Finder,Vocabulary Builder,Linguistic Resource,Lexicon Exploration,Language Reference,Thesaurus Alternative,alternative for thesaurus,Definition Lookup,Word Meaning,Lexical Database,Terminology Resource,Word Exploration,Vocabulary Enhancement,Word Synonyms,Language Definitions,Word Lookup,Word Search Engine,Word Reference,Linguistic Definitions,Word Discovery vocabulary,Linguistic Resources,Educational App,Word Pronunciation,Dictionary App,Word Meanings,Word Usage,lexicon,Word Exploration,Linguistic Knowledge,frequency scoring, word frequency,synonyms, antonyms, definitions, examples, rhymes, Pronunciation, syllables, type of, instance of,word instances, entails, similarity, similarities, substances, categories, word region, pertains to, word usage, relations, relationship, word parts"></meta>
     </Helmet>
 
     <Loader></Loader>
@@ -162,8 +162,8 @@ function Home() {
         <div className="header-wrapper">
           <div className="logo-wrap">
             <a href="#" className="hover-target">
-                <img className="icon" src="../images/png/logoicon.png" alt="Logo created with the help of app.logo.com" />
-                <img className="text" src="../images/png/logotext.png" alt="Logo created with the help of app.logo.com" />
+                <img className="icon" src="../images/png/logoicon.png" alt="WordHive Logo" />
+                <img className="text" src="../images/png/logotext.png" alt="WordHive" />
             </a>
           </div>
           <div className="nav-but-wrap">
