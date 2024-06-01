@@ -655,10 +655,10 @@ function Home() {
             </div>
 
             <div className="github my-auto">
-              <a className="image hover-target" href="https://github.com/kandalgaonkarshubham/WordHive" target="_blank">
-                <i className="fa-brands fa-github"></i>
+              <a href="https://kandalgaonkarshubham.dev" aria-label="Shubham Kandalgaonkar" target="_blank" className="image hover-target">
+                <i className="fa-brands fa-user-tie"></i>
               </a>
-              <p>Visit the Github Page</p>
+              <p>About Me</p>
             </div>
 
           </div>
