@@ -656,7 +656,7 @@ function Home() {
 
             <div className="github my-auto">
               <a href="https://kandalgaonkarshubham.dev" aria-label="Shubham Kandalgaonkar" target="_blank" className="image hover-target">
-                <i className="fa-brands fa-user-tie"></i>
+                <i className="fa-solid fa-user-tie"></i>
               </a>
               <p>About Me</p>
             </div>
