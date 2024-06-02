@@ -658,7 +658,7 @@ function Home() {
               <a href="https://kandalgaonkarshubham.dev" aria-label="Shubham Kandalgaonkar" target="_blank" className="image hover-target">
                 <i className="fa-solid fa-signature"></i>
               </a>
-              <p>About Me</p>
+              <p style={{textAlign:'center'}}>About Me</p>
             </div>
 
           </div>
