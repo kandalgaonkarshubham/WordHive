@@ -17,9 +17,9 @@ function Dictionary() {
   const header = useRef(null);
   const [isSuccess, setIsSuccess] = useState(false);
   // const urlWithProxy = "/search";
-  const urlWithProxy = "https://wordhive.dev/search";
+  const urlWithProxy = "https://wordhive-dev.netlify.app/search";
   // const urlWithProxyTTS = "/tts";
-  const urlWithProxyTTS = "https://wordhive.dev/tts";
+  const urlWithProxyTTS = "https://wordhive-dev.netlify.app/tts";
 
   useEffect(() => {
     $(".fh5co-loader").fadeOut(1500);
@@ -725,7 +725,9 @@ SOFTWARE. -->
             "Api Key is Not set, Redirecting you to Activation Portal";
           pushNotification(errorMessage, "warning");
           setTimeout(() => {
-            window.location.replace("https://wordhive.app/activate");
+            window.location.replace(
+              "https://wordhive-app.netlify.app/activate"
+            );
           }, 5000);
         } else if (err.request) {
           // Handle network errors (e.g., no internet connection)
@@ -994,11 +996,17 @@ SOFTWARE. -->
 
   return (
     <>
-    <Helmet>
+      <Helmet>
         <title>Let your mind thrive, with knowledge from WordHive</title>
-        <meta name="description" content="The key to unlocking knowledge lies in the search for a single word"></meta>
-        <meta name="keywords" content="wordhive,dictionary,Word Dictionary,search,search word"></meta>
-    </Helmet>
+        <meta
+          name="description"
+          content="The key to unlocking knowledge lies in the search for a single word"
+        ></meta>
+        <meta
+          name="keywords"
+          content="wordhive,dictionary,Word Dictionary,search,search word"
+        ></meta>
+      </Helmet>
 
       <Loader></Loader>
       <Tooltip id="my-tooltip" />
@@ -1349,21 +1357,21 @@ SOFTWARE. -->
           </div>
 
           <div id="fh5co-resume" className="fh5co-bg-color animate-box">
-            {/* <!-------------------------------------------------------------------------- 
+            {/* <!--------------------------------------------------------------------------
 		  The MIT License (MIT)
-		
+
 		Copyright (c) 2023 CP Lepage (https://codepen.io/cplepage/pen/EozVXL)
-		
+
 		Permission is hereby granted, free of charge, to any person obtaining a copy
 		of this software and associated documentation files (the "Software"), to deal
 		in the Software without restriction, including without limitation the rights
 		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 		copies of the Software, and to permit persons to whom the Software is
 		furnished to do so, subject to the following conditions:
-		
+
 		The above copyright notice and this permission notice shall be included in all
 		copies or substantial portions of the Software.
-		
+
 		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -1490,26 +1498,26 @@ SOFTWARE. -->
             {/* <!-----------------------------------------------------------------------------------
 
 			The MIT License (MIT)
-		
+
 		Copyright (c) 2023 Fehrenbach Baptiste (https://codepen.io/medrupaloscil/pen/OJNrLLX)
-		
+
 		Permission is hereby granted, free of charge, to any person obtaining a copy
 		of this software and associated documentation files (the "Software"), to deal
 		in the Software without restriction, including without limitation the rights
 		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 		copies of the Software, and to permit persons to whom the Software is
 		furnished to do so, subject to the following conditions:
-		
+
 		The above copyright notice and this permission notice shall be included in all
 		copies or substantial portions of the Software.
-		
+
 		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-		SOFTWARE. 
+		SOFTWARE.
 		-----------------------------------------------------------------------------------> */}
             <div className="container">
               <div className="row">
@@ -1688,7 +1696,7 @@ SOFTWARE. -->
           </div>
 
           <div id="fh5co-started" className="animate-box">
-            {/* 
+            {/*
 			The MIT License (MIT)
 
 			Copyright (c) 2023 DariyGRAY (https://codepen.io/DariyGRAY/pen/OBJpZR)
@@ -1709,7 +1717,7 @@ SOFTWARE. -->
 			AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 			LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 			OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-			SOFTWARE. 
+			SOFTWARE.
 		*/}
 
             <div className="overlay"></div>

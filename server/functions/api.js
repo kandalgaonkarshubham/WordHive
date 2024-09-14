@@ -19,7 +19,7 @@ let apiKey = "";
 const activateApiKeyMiddleware = (time) => {
   if (apiKey) {
     // Use the API key here in your HTTP requests (e.g., set it as a header)
-    console.log("API key activated");
+    // console.log("API key activated");
     // Deactivate the API key after specified time
     setTimeout(() => {
       apiKey = ""; // Clear the API key
@@ -66,7 +66,7 @@ router.get("/", (req, res) => {
       ${styles}
   </head>
   <body>
-      
+
       <div class="container d-flex justify-content-center align-items-center">
           <div class="row">
               <div class="col-12">
@@ -91,7 +91,7 @@ router.get("/activateAPI", (req, res) => {
   if (isNaN(tValue)) {
     res.status(400).json({ success: false, message: "Empty or Invalid Value provided" });
   } else {
-    
+
     if (apiKey !== "") {
       res.status(400).json({ success: false, message: `API key is already active` });
     }else{
@@ -176,7 +176,7 @@ router.get("/search", async (req, res) => {
 
     console.log(" wordapi logs");
     console.error(error);
-  
+
     if (error.response.data.message === 'Invalid API key. Go to https://docs.rapidapi.com/docs/keys for more info.') {
       res.status(502).json({ error: error.response.data.message });
     }else{

@@ -118,7 +118,7 @@ function Activate() {
       setaxiosCall(true);
       // Axios request to activate the API key
       axios
-        .get(`https://wordhive.dev/activateAPI?t=${tValue}`)
+        .get(`https://wordhive-dev.netlify.app/activateAPI?t=${tValue}`)
         .then((response) => {
           const data = response.data;
           // Check if the API key activation was successful
@@ -134,7 +134,9 @@ function Activate() {
             document.getElementById("myButton").disabled = true;
             setaxiosCall(false);
             setTimeout(() => {
-              window.location.replace("https://www.wordhive.app/dictionary");
+              window.location.replace(
+                "https://wordhive-app.netlify.app/dictionary"
+              );
             }, 2000);
           } else {
             console.error("API key activation failed:", data.message);
