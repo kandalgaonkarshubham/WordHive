@@ -10,7 +10,7 @@ WordHive is an online dictionary and word relations explorer built using React.j
 
 The seamless integration of React, Vite, and Express ensures that WordHive operates with unrivaled speed and efficiency. Powered by a robust backend, the application's API calls swiftly fetch and present the desired word information, while the frontend's responsive design and interactive elements enhance the user experience.
 
-The Frontend is hosted at [wordhive.app](https://wordhive.app), and Backend is hosted at [wordhive.dev](https://wordhive.dev)
+The Frontend is hosted at [wordhive.app](https://wordhive-app.netlify.app/), and Backend is hosted at [wordhive.dev](https://wordhive-dev.netlify.app)
 
 ## Features
 
